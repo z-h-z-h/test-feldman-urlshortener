@@ -13,7 +13,18 @@
 </head>
 <body>
 <div class="container">
-    @yield('content')
+    <div class="row justify-content-md-center">
+        <div class="col-7 mt-5">
+            @if(session()->has('message'))
+                <div class="alert alert-danger mb-5" role="alert">
+                    {{ session('message') }}
+                </div>
+            @endif
+
+            @yield('content')
+
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -21,8 +21,9 @@ class Link extends Model
 
     protected $dates = ['expired_at'];
 
-
     protected $appends = ['is_expired'];
+
+    public $timestamps = false;
 
     public function getIsExpiredAttribute()
     {
@@ -30,11 +31,11 @@ class Link extends Model
             return false;
         }
 
-        if ($this->expired_at->lessThan(Carbon::now())){
-            return true;
+        if ($this->expired_at->greaterThan(Carbon::now())){
+            return false;
         }
 
-        return false;
+        return true;
     }
 
     public function getRouteKeyName()

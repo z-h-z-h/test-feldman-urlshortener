@@ -29,7 +29,7 @@ class LinkService
      */
     public function handle(array $data)
     {
-        if (empty($data['minutes'])) {
+        if (!empty($data['minutes'])) {
             $data['expired_at'] = Carbon::now()->addMinutes($data['minutes'])->toDateTimeString();
         }
 

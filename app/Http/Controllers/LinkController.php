@@ -59,44 +59,12 @@ class LinkController extends Controller
         return view('show', compact('link'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Link $link
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Link $link)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Link $link
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Link $link)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Link $link
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Link $link)
-    {
-        //
-    }
 
     public function redirect(Link $link)
     {
-        if ($link->isExpired) {
-            return redirect('/');
+        if ($link->is_expired) {
+            return redirect('/')->withMessage('Link expired');
         }
 
         return redirect($link->full);
