@@ -7,7 +7,7 @@
 * Возможность задать время жизни короткой ссылки
 
 # Установка
-* git clone https://github.com/z-h-z-h/urlshortener.git urlshortener
+* git clone https://github.com/z-h-z-h/test-feldman-urlshortener.git urlshortener
 * composer install
 * cp .env.example .env
 * Настроить .env - данные MySQL
